@@ -1,0 +1,27 @@
+program Clinica;
+
+uses
+  Vcl.Forms,
+  unit_principal in 'unit_principal.pas' {formPrincipal},
+  unitCadPacientes in 'unitCadPacientes.pas' {formCadPacientes},
+  unitCadAgendamentos in 'unitCadAgendamentos.pas' {formCadAgendamentos},
+  unitDM in 'unitDM.pas' {DM: TDataModule},
+  login in 'login.pas' {form_login},
+  unitCadUsu in 'unitCadUsu.pas' {FormCadUsu},
+  Vcl.Themes,
+  Vcl.Styles;
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  TStyleManager.TrySetStyle('Windows10');
+  Application.CreateForm(Tform_login, form_login);
+  Application.CreateForm(TformPrincipal, formPrincipal);
+  Application.CreateForm(TformCadPacientes, formCadPacientes);
+  Application.CreateForm(TformCadAgendamentos, formCadAgendamentos);
+  Application.CreateForm(TFormCadUsu, FormCadUsu);
+  Application.CreateForm(TDM, DM);
+  Application.Run;
+end.

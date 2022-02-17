@@ -1,0 +1,31 @@
+unit unit_login;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  Tfm_login = class(TForm)
+    Edit1: TEdit;
+    Edit2: TEdit;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    Label1: TLabel;
+    Label2: TLabel;
+    BitBtn3: TBitBtn;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  fm_login: Tfm_login;
+
+implementation
+
+{$R *.dfm}
+
+end.

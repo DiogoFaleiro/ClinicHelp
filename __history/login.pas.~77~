@@ -1,0 +1,100 @@
+unit login;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls,
+  Vcl.Buttons, Vcl.ExtCtrls, FireDAC.Stan.Expr, FireDAC.Comp.Client, FireDAC.Stan.ExprFuncs,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet;
+
+type
+  Tform_login = class(TForm)
+    Image1: TImage;
+    bt_cancelar: TBitBtn;
+    bt_entrar: TBitBtn;
+    Label1: TLabel;
+    Label2: TLabel;
+    Bevel1: TBevel;
+    edtUsu: TEdit;
+    edtSenha: TEdit;
+    procedure bt_entrarClick(Sender: TObject);
+    procedure edtSenhaKeyPress(Sender: TObject; var Key: Char);
+    procedure edtSenhaEnter(Sender: TObject);
+    procedure edtUsuKeyPress(Sender: TObject; var Key: Char);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  form_login: Tform_login;
+
+implementation
+
+{$R *.dfm}
+
+uses unitDM, unit_principal, unitCadAgendamentos, unitCadPacientes, unitCadUsu;
+
+procedure Tform_login.bt_entrarClick(Sender: TObject);
+begin
+   edtSenha.Text := StringReplace(edtSenha.Text, ' ', '', [rfReplaceAll]);
+   if edtusu.Text = '' then begin
+     ShowMessage('Informe seu usuário!');
+     edtusu.SetFocus;
+     abort;
+   end;
+   if (edtSenha.Text = '') then begin
+     ShowMessage('Informe uma senha');
+     edtSenha.SetFocus;
+     abort;
+   end;
+   if not dm.tbUsuarios.LocateEx('usuario',edtusu.Text,[lxoCaseInsensitive]) then begin
+      ShowMessage('Não localizei esse usuário! Confira o usuário no campo correspondente.');
+      abort;
+   end
+   else if (dm.MD5String(edtSenha.Text) <> dm.tbUsuariossenha.AsString) then begin
+      ShowMessage('A senha digitada não confere com a senha do usuário '+edtusu.Text+'!');
+      abort;
+   end
+   else begin
+     //passou o acesso
+     form_login.Hide;
+     form_login.Closemodal;
+     formPrincipal.ShowModal;
+   end;
+end;
+procedure Tform_login.edtSenhaEnter(Sender: TObject);
+begin
+  bt_entrar.Click;
+end;
+
+procedure Tform_login.edtSenhaKeyPress(Sender: TObject; var Key: Char);
+begin
+  // Se o usuário pressionar o Enter do teclado;
+  if key = #13 then
+  begin
+    // Limpando o processo;
+    key:=#0;
+    // Simula o tab;
+    Perform(WM_NEXTDLGCTL,0,0);
+  end;
+
+end;
+
+procedure Tform_login.edtUsuKeyPress(Sender: TObject; var Key: Char);
+begin
+ // Se o usuário pressionar o Enter do teclado;
+  if key = #13 then
+  begin
+    // Limpando o processo;
+    key:=#0;
+    // Simula o tab;
+    Perform(WM_NEXTDLGCTL,0,0);
+  end;
+end;
+
+end.

@@ -1,0 +1,93 @@
+unit unitCadPacientes;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.DBCtrls,
+  Vcl.Grids, Vcl.DBGrids, Vcl.Mask, Vcl.ExtCtrls, Vcl.CheckLst, Vcl.ComCtrls,
+  Vcl.Buttons;
+
+type
+  TformCadPacientes = class(TForm)
+    Panel1: TPanel;
+    Label1: TLabel;
+    ID: TDBEdit;
+    CPF: TDBEdit;
+    Nome: TDBEdit;
+    Cel: TDBEdit;
+    Data: TDBEdit;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    cadastro: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    Label7: TLabel;
+    Label9: TLabel;
+    DBEdit1: TDBEdit;
+    Label10: TLabel;
+    DBEdit2: TDBEdit;
+    Label11: TLabel;
+    Label12: TLabel;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBComboBox1: TDBComboBox;
+    Label13: TLabel;
+    Label6: TLabel;
+    DBEdit5: TDBEdit;
+    Label14: TLabel;
+    DBEdit6: TDBEdit;
+    DBEdit7: TDBEdit;
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    Label8: TLabel;
+    Label17: TLabel;
+    DBEdit8: TDBEdit;
+    DBEdit9: TDBEdit;
+    Label15: TLabel;
+    Label19: TLabel;
+    Imprimir: TBitBtn;
+    Bevel1: TBevel;
+    DBComboBox2: TDBComboBox;
+    Label20: TLabel;
+    DBMemo1: TDBMemo;
+    DBMemo2: TDBMemo;
+    txtBusca: TEdit;
+    Label16: TLabel;
+    DBCheckBox1: TDBCheckBox;
+    DBCheckBox2: TDBCheckBox;
+    DBCheckBox3: TDBCheckBox;
+    DBCheckBox4: TDBCheckBox;
+    DBCheckBox5: TDBCheckBox;
+    DBCheckBox6: TDBCheckBox;
+    DBCheckBox7: TDBCheckBox;
+    DBCheckBox8: TDBCheckBox;
+    DBCheckBox9: TDBCheckBox;
+    DBCheckBox10: TDBCheckBox;
+    DBCheckBox11: TDBCheckBox;
+    DBCheckBox12: TDBCheckBox;
+    Bevel2: TBevel;
+    procedure txtBuscaChange(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  formCadPacientes: TformCadPacientes;
+
+implementation
+
+{$R *.dfm}
+
+uses unitDM, unitCadAgendamentos;
+
+procedure TformCadPacientes.txtBuscaChange(Sender: TObject);
+begin
+  DM.tbPaciente.Locate('nome', txtBusca.Text, [loPartialKey]);
+end;
+
+end.
