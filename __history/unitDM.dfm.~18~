@@ -44,13 +44,13 @@ object DM: TDM
       FieldName = 'data'
       Origin = 'data'
       Required = True
-      EditMask = '!99/99/00;1;_'
+      EditMask = '!99/99/0000;1;_'
     end
     object tbPacientecpf: TStringField
       FieldName = 'cpf'
       Origin = 'cpf'
       Required = True
-      EditMask = '###.###.###-##;0;_'
+      EditMask = '###-###-###-##;1;_'
       Size = 14
     end
     object tbPacienteobservacoes: TMemoField
@@ -58,6 +58,80 @@ object DM: TDM
       Origin = 'observacoes'
       Required = True
       BlobType = ftMemo
+    end
+    object tbPacienteSexo: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Sexo'
+      Origin = 'Sexo'
+      Size = 2
+    end
+    object tbPacienteRG: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'RG'
+      Origin = 'RG'
+      Size = 21
+    end
+    object tbPacienteOrgao_exp: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Orgao_exp'
+      Origin = 'Orgao_exp'
+      Size = 10
+    end
+    object tbPacienteEnd: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'End'
+      Origin = 'End'
+      Size = 51
+    end
+    object tbPacienteDataNasc: TDateTimeField
+      AutoGenerateValue = arDefault
+      FieldName = 'DataNasc'
+      Origin = 'DataNasc'
+      EditMask = '!99/99/0000;1;_'
+    end
+    object tbPacienteEstCivil: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'EstCivil'
+      Origin = 'EstCivil'
+    end
+    object tbPacienteConvenio: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Convenio'
+      Origin = 'Convenio'
+      Size = 16
+    end
+    object tbPacienteIndicacao: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Indicacao'
+      Origin = 'Indicacao'
+    end
+    object tbPacienteProfis: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Profis'
+      Origin = 'Profis'
+    end
+    object tbPacienteAnamnese: TMemoField
+      AutoGenerateValue = arDefault
+      FieldName = 'Anamnese'
+      Origin = 'Anamnese'
+      BlobType = ftMemo
+    end
+    object tbPacienteDataIni: TDateTimeField
+      AutoGenerateValue = arDefault
+      FieldName = 'DataIni'
+      Origin = 'DataIni'
+      EditMask = '!99/99/0000;1;_'
+    end
+    object tbPacienteDataFim: TDateTimeField
+      AutoGenerateValue = arDefault
+      FieldName = 'DataFim'
+      Origin = 'DataFim'
+      EditMask = '!99/99/0000;1;_'
+    end
+    object tbPacienteTratamentos: TBooleanField
+      AutoGenerateValue = arDefault
+      FieldName = 'Tratamentos'
+      Origin = 'Tratamentos'
     end
   end
   object tbAgendamento: TFDTable
@@ -113,6 +187,7 @@ object DM: TDM
     Top = 168
   end
   object tbUsuarios: TFDTable
+    Active = True
     IndexName = 'PRIMARY'
     Connection = Conecxao
     UpdateOptions.UpdateTableName = 'usuarios'
@@ -134,11 +209,10 @@ object DM: TDM
       Size = 50
     end
     object tbUsuariossenha: TStringField
-      AutoGenerateValue = arDefault
       FieldName = 'senha'
       Origin = 'senha'
-      ProviderFlags = [pfInUpdate]
-      Size = 11
+      Required = True
+      Size = 32
     end
   end
   object dsUsuarios: TDataSource

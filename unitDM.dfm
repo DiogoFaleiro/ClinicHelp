@@ -14,7 +14,6 @@ object DM: TDM
     Top = 16
   end
   object tbPaciente: TFDTable
-    Active = True
     AfterInsert = tbPacienteAfterInsert
     IndexFieldNames = 'id'
     Connection = Conecxao
@@ -135,7 +134,6 @@ object DM: TDM
     end
   end
   object tbAgendamento: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = Conecxao
     UpdateOptions.UpdateTableName = 'clinica.agendamento'
@@ -187,7 +185,6 @@ object DM: TDM
     Top = 168
   end
   object tbUsuarios: TFDTable
-    Active = True
     IndexName = 'PRIMARY'
     Connection = Conecxao
     UpdateOptions.UpdateTableName = 'usuarios'
