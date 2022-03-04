@@ -6,7 +6,7 @@ object formCadAgendamentos: TformCadAgendamentos
   Caption = 'Cadastro de Agendamentos'
   ClientHeight = 700
   ClientWidth = 1111
-  Color = clBtnFace
+  Color = clGradientInactiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -44,7 +44,7 @@ object formCadAgendamentos: TformCadAgendamentos
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 32
+    Left = 128
     Top = 172
     Width = 26
     Height = 16
@@ -57,7 +57,7 @@ object formCadAgendamentos: TformCadAgendamentos
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 128
+    Left = 224
     Top = 172
     Width = 27
     Height = 16
@@ -107,6 +107,8 @@ object formCadAgendamentos: TformCadAgendamentos
     Width = 1111
     Height = 103
     Align = alTop
+    Color = clInactiveCaption
+    ParentBackground = False
     TabOrder = 0
     object Label1: TLabel
       Left = 40
@@ -133,26 +135,32 @@ object formCadAgendamentos: TformCadAgendamentos
   object DBEdit1: TDBEdit
     Left = 32
     Top = 128
-    Width = 65
+    Width = 41
     Height = 21
+    Color = clInfoBk
     DataField = 'id'
     DataSource = DM.dsAgendamento
+    Enabled = False
+    ParentShowHint = False
+    ShowHint = False
     TabOrder = 1
   end
   object DBEdit3: TDBEdit
-    Left = 32
+    Left = 128
     Top = 192
     Width = 65
     Height = 21
+    Color = clInfoBk
     DataField = 'data'
     DataSource = DM.dsAgendamento
     TabOrder = 2
   end
   object DBEdit4: TDBEdit
-    Left = 128
+    Left = 224
     Top = 192
     Width = 65
     Height = 21
+    Color = clInfoBk
     DataField = 'hora'
     DataSource = DM.dsAgendamento
     TabOrder = 3
@@ -162,6 +170,7 @@ object formCadAgendamentos: TformCadAgendamentos
     Top = 192
     Width = 161
     Height = 21
+    Color = clInfoBk
     DataField = 'medico'
     DataSource = DM.dsAgendamento
     TabOrder = 4
@@ -171,6 +180,7 @@ object formCadAgendamentos: TformCadAgendamentos
     Top = 128
     Width = 209
     Height = 21
+    Color = clInfoBk
     DataField = 'id_paciente'
     DataSource = DM.dsAgendamento
     KeyField = 'id'
@@ -183,6 +193,7 @@ object formCadAgendamentos: TformCadAgendamentos
     Top = 128
     Width = 161
     Height = 21
+    Color = clInfoBk
     DataField = 'especialidade'
     DataSource = DM.dsAgendamento
     Items.Strings = (
@@ -222,6 +233,7 @@ object formCadAgendamentos: TformCadAgendamentos
     Top = 128
     Width = 553
     Height = 556
+    Color = clInfoBk
     DataSource = DM.dsAgendamento
     TabOrder = 8
     TitleFont.Charset = DEFAULT_CHARSET

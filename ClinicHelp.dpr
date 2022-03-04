@@ -22,7 +22,7 @@ begin
   Application.CreateForm(TformCadPacientes, formCadPacientes);
   Application.CreateForm(TformCadAgendamentos, formCadAgendamentos);
   Application.CreateForm(TFormCadUsu, FormCadUsu);
-  Application.CreateForm(TDM, DM);
   Application.CreateForm(TformCadTratamentos, formCadTratamentos);
+  Application.CreateForm(TDM, DM);
   Application.Run;
 end.

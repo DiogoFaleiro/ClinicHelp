@@ -6,7 +6,7 @@ object formCadPacientes: TformCadPacientes
   Caption = 'Cadastro de Pacientes'
   ClientHeight = 700
   ClientWidth = 1111
-  Color = clBtnFace
+  Color = clGradientInactiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -134,6 +134,8 @@ object formCadPacientes: TformCadPacientes
     Width = 1111
     Height = 103
     Align = alTop
+    Color = clInactiveCaption
+    ParentBackground = False
     TabOrder = 0
     object Label1: TLabel
       Left = 40
@@ -390,6 +392,7 @@ object formCadPacientes: TformCadPacientes
     Top = 136
     Width = 33
     Height = 21
+    Color = clInfoBk
     DataField = 'id'
     DataSource = DM.dsPaciente
     Enabled = False
@@ -400,6 +403,7 @@ object formCadPacientes: TformCadPacientes
     Top = 192
     Width = 110
     Height = 21
+    Color = clInfoBk
     DataField = 'cpf'
     DataSource = DM.dsPaciente
     MaxLength = 14
@@ -410,6 +414,7 @@ object formCadPacientes: TformCadPacientes
     Top = 192
     Width = 177
     Height = 21
+    Color = clInfoBk
     DataField = 'nome'
     DataSource = DM.dsPaciente
     TabOrder = 2
@@ -419,6 +424,7 @@ object formCadPacientes: TformCadPacientes
     Top = 248
     Width = 89
     Height = 21
+    Color = clInfoBk
     DataField = 'celular'
     DataSource = DM.dsPaciente
     MaxLength = 14
@@ -429,6 +435,7 @@ object formCadPacientes: TformCadPacientes
     Top = 343
     Width = 65
     Height = 21
+    Color = clInfoBk
     DataField = 'data'
     DataSource = DM.dsPaciente
     Enabled = False
@@ -440,6 +447,7 @@ object formCadPacientes: TformCadPacientes
     Top = 163
     Width = 425
     Height = 518
+    Color = clInfoBk
     DataSource = DM.dsPaciente
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -471,6 +479,7 @@ object formCadPacientes: TformCadPacientes
     Top = 192
     Width = 89
     Height = 21
+    Color = clInfoBk
     DataField = 'RG'
     DataSource = DM.dsPaciente
     TabOrder = 5
@@ -480,6 +489,7 @@ object formCadPacientes: TformCadPacientes
     Top = 248
     Width = 257
     Height = 21
+    Color = clInfoBk
     DataField = 'End'
     DataSource = DM.dsPaciente
     TabOrder = 7
@@ -489,6 +499,7 @@ object formCadPacientes: TformCadPacientes
     Top = 248
     Width = 104
     Height = 21
+    Color = clInfoBk
     DataField = 'DataNasc'
     DataSource = DM.dsPaciente
     MaxLength = 10
@@ -499,6 +510,7 @@ object formCadPacientes: TformCadPacientes
     Top = 248
     Width = 89
     Height = 21
+    Color = clInfoBk
     DataField = 'EstCivil'
     DataSource = DM.dsPaciente
     Items.Strings = (
@@ -514,6 +526,7 @@ object formCadPacientes: TformCadPacientes
     Top = 300
     Width = 257
     Height = 21
+    Color = clInfoBk
     DataField = 'Convenio'
     DataSource = DM.dsPaciente
     TabOrder = 11
@@ -523,6 +536,7 @@ object formCadPacientes: TformCadPacientes
     Top = 300
     Width = 110
     Height = 21
+    Color = clInfoBk
     DataField = 'Indicacao'
     DataSource = DM.dsPaciente
     TabOrder = 12
@@ -532,6 +546,7 @@ object formCadPacientes: TformCadPacientes
     Top = 300
     Width = 191
     Height = 21
+    Color = clInfoBk
     DataField = 'Profis'
     DataSource = DM.dsPaciente
     TabOrder = 13
@@ -539,17 +554,19 @@ object formCadPacientes: TformCadPacientes
   object PageControl1: TPageControl
     Left = 19
     Top = 370
-    Width = 606
+    Width = 596
     Height = 316
     ActivePage = TabSheet2
     TabOrder = 14
     object TabSheet1: TTabSheet
       Caption = 'Resultado da Anamnese'
+      ExplicitWidth = 598
       object db_anamnese: TDBMemo
         Left = 12
         Top = 15
         Width = 569
         Height = 231
+        Color = clInfoBk
         DataField = 'Anamnese'
         DataSource = DM.dsPaciente
         TabOrder = 0
@@ -558,6 +575,7 @@ object formCadPacientes: TformCadPacientes
     object TabSheet2: TTabSheet
       Caption = 'Plano de tratamento'
       ImageIndex = 1
+      ExplicitWidth = 587
       object Label8: TLabel
         Left = 12
         Top = 9
@@ -579,165 +597,15 @@ object formCadPacientes: TformCadPacientes
         Height = 13
         Caption = 'Observa'#231#245'es'
       end
-      object Bevel2: TBevel
-        Left = 114
-        Top = 3
-        Width = 457
-        Height = 110
-        Shape = bsFrame
-      end
       object db_obs: TDBMemo
         Left = 11
         Top = 128
         Width = 560
         Height = 150
+        Color = clInfoBk
         DataField = 'observacoes'
         DataSource = DM.dsPaciente
         TabOrder = 0
-      end
-      object DBCheckBox1: TDBCheckBox
-        Left = 124
-        Top = 15
-        Width = 45
-        Height = 17
-        Cursor = crHandPoint
-        Caption = 'Fl'#250'or'
-        DataField = 'Tratamentos'
-        DataSource = DM.dsPaciente
-        TabOrder = 1
-        ValueChecked = 'false'
-      end
-      object DBCheckBox10: TDBCheckBox
-        Left = 366
-        Top = 15
-        Width = 97
-        Height = 17
-        Cursor = crHandPoint
-        Caption = 'Cora dent'#225'ria'
-        DataField = 'Tratamentos'
-        DataSource = DM.dsPaciente
-        TabOrder = 2
-        ValueChecked = 'false'
-      end
-      object DBCheckBox11: TDBCheckBox
-        Left = 250
-        Top = 84
-        Width = 97
-        Height = 17
-        Cursor = crHandPoint
-        Caption = 'Restaura'#231#227'o'
-        DataField = 'Tratamentos'
-        DataSource = DM.dsPaciente
-        TabOrder = 3
-        ValueChecked = 'false'
-      end
-      object DBCheckBox12: TDBCheckBox
-        Left = 366
-        Top = 38
-        Width = 97
-        Height = 17
-        Cursor = crHandPoint
-        Caption = 'Gengivoplastia'
-        DataField = 'Tratamentos'
-        DataSource = DM.dsPaciente
-        TabOrder = 4
-        ValueChecked = 'false'
-      end
-      object DBCheckBox2: TDBCheckBox
-        Left = 366
-        Top = 84
-        Width = 97
-        Height = 17
-        Cursor = crHandPoint
-        Caption = 'Limpeza'
-        DataField = 'Tratamentos'
-        DataSource = DM.dsPaciente
-        TabOrder = 5
-        ValueChecked = 'false'
-      end
-      object DBCheckBox3: TDBCheckBox
-        Left = 124
-        Top = 84
-        Width = 97
-        Height = 17
-        Cursor = crHandPoint
-        Caption = 'Canal'
-        DataField = 'Tratamentos'
-        DataSource = DM.dsPaciente
-        TabOrder = 6
-        ValueChecked = 'false'
-      end
-      object DBCheckBox4: TDBCheckBox
-        Left = 124
-        Top = 38
-        Width = 97
-        Height = 17
-        Cursor = crHandPoint
-        Caption = 'Obtura'#231#227'o'
-        DataField = 'Tratamentos'
-        DataSource = DM.dsPaciente
-        TabOrder = 7
-        ValueChecked = 'false'
-      end
-      object DBCheckBox5: TDBCheckBox
-        Left = 250
-        Top = 61
-        Width = 97
-        Height = 17
-        Cursor = crHandPoint
-        Caption = 'Clareamento'
-        DataField = 'Tratamentos'
-        DataSource = DM.dsPaciente
-        TabOrder = 8
-        ValueChecked = 'false'
-      end
-      object DBCheckBox6: TDBCheckBox
-        Left = 250
-        Top = 38
-        Width = 110
-        Height = 17
-        Cursor = crHandPoint
-        Caption = 'Toxina Botulinica'
-        DataField = 'Tratamentos'
-        DataSource = DM.dsPaciente
-        TabOrder = 9
-        ValueChecked = 'false'
-      end
-      object DBCheckBox7: TDBCheckBox
-        Left = 366
-        Top = 61
-        Width = 97
-        Height = 17
-        Cursor = crHandPoint
-        Caption = 'Endodontia'
-        DataField = 'Tratamentos'
-        DataSource = DM.dsPaciente
-        TabOrder = 10
-        ValueChecked = 'false'
-      end
-      object DBCheckBox8: TDBCheckBox
-        Left = 124
-        Top = 61
-        Width = 110
-        Height = 17
-        Cursor = crHandPoint
-        Caption = 'Implante dent'#225'rio'
-        DataField = 'Tratamentos'
-        DataSource = DM.dsPaciente
-        TabOrder = 11
-        ValueChecked = 'false'
-      end
-      object DBCheckBox9: TDBCheckBox
-        Left = 250
-        Top = 15
-        Width = 97
-        Height = 17
-        Cursor = crHandPoint
-        Caption = 'Resina'
-        DataField = 'Tratamentos'
-        DataSource = DM.dsPaciente
-        TabOrder = 12
-        ValueChecked = 'false'
       end
       object db_dataini: TJvDBDatePickerEdit
         Left = 12
@@ -745,9 +613,10 @@ object formCadPacientes: TformCadPacientes
         Width = 96
         Height = 21
         AllowNoDate = True
+        Color = clInfoBk
         DataField = 'DataIni'
         DataSource = DM.dsPaciente
-        TabOrder = 13
+        TabOrder = 1
       end
       object db_datafim: TJvDBDatePickerEdit
         Left = 12
@@ -755,9 +624,10 @@ object formCadPacientes: TformCadPacientes
         Width = 96
         Height = 21
         AllowNoDate = True
+        Color = clInfoBk
         DataField = 'DataFim'
         DataSource = DM.dsPaciente
-        TabOrder = 14
+        TabOrder = 2
       end
     end
   end
@@ -766,6 +636,7 @@ object formCadPacientes: TformCadPacientes
     Top = 192
     Width = 74
     Height = 21
+    Color = clInfoBk
     DataField = 'Sexo'
     DataSource = DM.dsPaciente
     Items.Strings = (
@@ -778,6 +649,7 @@ object formCadPacientes: TformCadPacientes
     Top = 192
     Width = 89
     Height = 21
+    Color = clInfoBk
     DataField = 'Orgao_exp'
     DataSource = DM.dsPaciente
     TabOrder = 6
@@ -787,6 +659,7 @@ object formCadPacientes: TformCadPacientes
     Top = 136
     Width = 425
     Height = 21
+    Color = clInfoBk
     ParentShowHint = False
     ShowHint = False
     TabOrder = 17

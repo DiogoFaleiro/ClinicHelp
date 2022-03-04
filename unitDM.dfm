@@ -14,6 +14,7 @@ object DM: TDM
     Top = 16
   end
   object tbPaciente: TFDTable
+    Active = True
     AfterInsert = tbPacienteAfterInsert
     IndexFieldNames = 'id'
     Connection = Conecxao
@@ -80,7 +81,7 @@ object DM: TDM
       AutoGenerateValue = arDefault
       FieldName = 'End'
       Origin = 'End'
-      Size = 51
+      Size = 41
     end
     object tbPacienteDataNasc: TDateTimeField
       AutoGenerateValue = arDefault
@@ -127,13 +128,9 @@ object DM: TDM
       Origin = 'DataFim'
       EditMask = '!99/99/0000;1;_'
     end
-    object tbPacienteTratamentos: TBooleanField
-      AutoGenerateValue = arDefault
-      FieldName = 'Tratamentos'
-      Origin = 'Tratamentos'
-    end
   end
   object tbAgendamento: TFDTable
+    Active = True
     IndexFieldNames = 'id'
     Connection = Conecxao
     UpdateOptions.UpdateTableName = 'clinica.agendamento'
@@ -165,7 +162,6 @@ object DM: TDM
       FieldName = 'especialidade'
       Origin = 'especialidade'
       Required = True
-      Size = 25
     end
     object tbAgendamentomedico: TStringField
       FieldName = 'medico'
@@ -185,6 +181,7 @@ object DM: TDM
     Top = 168
   end
   object tbUsuarios: TFDTable
+    Active = True
     IndexName = 'PRIMARY'
     Connection = Conecxao
     UpdateOptions.UpdateTableName = 'usuarios'
@@ -203,7 +200,6 @@ object DM: TDM
       FieldName = 'usuario'
       Origin = 'usuario'
       ProviderFlags = [pfInUpdate]
-      Size = 50
     end
     object tbUsuariossenha: TStringField
       FieldName = 'senha'

@@ -4,7 +4,7 @@ object formCadTratamentos: TformCadTratamentos
   Caption = 'Cadastro de Tratamentos'
   ClientHeight = 441
   ClientWidth = 709
-  Color = clBtnFace
+  Color = clGradientInactiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

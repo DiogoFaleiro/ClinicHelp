@@ -1816,6 +1816,7 @@ object form_login: Tform_login
     Top = 16
     Width = 121
     Height = 24
+    Color = clInfoBk
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -1830,6 +1831,7 @@ object form_login: Tform_login
     Width = 121
     Height = 24
     HelpType = htKeyword
+    Color = clInfoBk
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13

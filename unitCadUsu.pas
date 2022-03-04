@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ExtCtrls, Vcl.DBCtrls,
-  Vcl.Mask, Vcl.StdCtrls, Vcl.Grids, Vcl.DBGrids, uJKDialog, PngImage;
+  Vcl.Mask, Vcl.StdCtrls, Vcl.Grids, Vcl.DBGrids, uJKDialog, PngImage,
+  Vcl.CheckLst;
 
 type
   TFormCadUsu = class(TForm)
@@ -17,10 +18,10 @@ type
     Label2: TLabel;
     Label3: TLabel;
     DBNavigator1: TDBNavigator;
-    Bevel1: TBevel;
     Panel1: TPanel;
     Label4: TLabel;
-    bt_gravar: TButton;
+    CheckListBox1: TCheckListBox;
+    Label5: TLabel;
     procedure bt_gravarClick(Sender: TObject);
   private
     { Private declarations }

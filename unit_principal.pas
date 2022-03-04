@@ -11,18 +11,19 @@ uses
 type
   TformPrincipal = class(TForm)
     Panel1: TPanel;
-    bt_sair: TBitBtn;
+    bt_bkp: TBitBtn;
     bt_pacientes: TBitBtn;
     Image1: TImage;
     bt_usu: TBitBtn;
     bt_relatorios: TBitBtn;
     bt_trocausu: TBitBtn;
     bt_agendamentos: TBitBtn;
+    bt_sair: TBitBtn;
     procedure bt_pacientesClick(Sender: TObject);
     procedure bt_agendamentosClick(Sender: TObject);
     procedure bt_usuClick(Sender: TObject);
-    procedure bt_sairClick(Sender: TObject);
     procedure bt_trocausuClick(Sender: TObject);
+    procedure bt_sairClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -49,6 +50,11 @@ begin
  formCadPacientes.ShowModal;
 end;
 
+procedure TformPrincipal.bt_sairClick(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
 procedure TformPrincipal.bt_agendamentosClick(Sender: TObject);
 begin
  formCadAgendamentos.ShowModal;
@@ -59,12 +65,7 @@ begin
   form_login.edtSenha.Text := '';
   formPrincipal.Hide;
   formPrincipal.Close;
-   form_login.Show;
-end;
-
-procedure TformPrincipal.bt_sairClick(Sender: TObject);
-begin
- Application.Terminate;
+  form_login.Show;
 end;
 
 end.

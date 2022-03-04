@@ -27,7 +27,6 @@ type
     tbAgendamentomedico: TStringField;
     tbUsuariosid: TFDAutoIncField;
     tbUsuariosusuario: TStringField;
-    tbUsuariossenha: TStringField;
     tbPacienteid: TFDAutoIncField;
     tbPacientenome: TStringField;
     tbPacientecelular: TStringField;
@@ -46,7 +45,7 @@ type
     tbPacienteAnamnese: TMemoField;
     tbPacienteDataIni: TDateTimeField;
     tbPacienteDataFim: TDateTimeField;
-    tbPacienteTratamentos: TBooleanField;
+    tbUsuariossenha: TStringField;
     procedure tbPacienteAfterInsert(DataSet: TDataSet);
   private
     { Private declarations }
