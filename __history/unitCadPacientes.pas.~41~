@@ -1,0 +1,151 @@
+unit unitCadPacientes;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.DBCtrls,
+  Vcl.Grids, Vcl.DBGrids, Vcl.Mask, Vcl.ExtCtrls, Vcl.CheckLst, Vcl.ComCtrls,
+  Vcl.Buttons, JvExComCtrls, JvDateTimePicker, JvDBDateTimePicker, JvExMask,
+  JvToolEdit, JvMaskEdit, JvCheckedMaskEdit, JvDatePickerEdit,
+  JvDBDatePickerEdit, JvDBControls, QuickRpt;
+
+type
+NewTypeNav = class( TDbNavigator );
+
+type
+  TformCadPacientes = class(TForm)
+    Panel1: TPanel;
+    Label1: TLabel;
+    ID: TDBEdit;
+    CPF: TDBEdit;
+    Nome: TDBEdit;
+    ed_cel: TDBEdit;
+    Data: TDBEdit;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    cadastro: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    Label7: TLabel;
+    Label9: TLabel;
+    ed_RG: TDBEdit;
+    Label10: TLabel;
+    ed_orgexp: TDBEdit;
+    Label11: TLabel;
+    Label12: TLabel;
+    ed_end: TDBEdit;
+    ed_nasc: TDBEdit;
+    ed_estcivil: TDBComboBox;
+    Label13: TLabel;
+    Label6: TLabel;
+    ed_convenio: TDBEdit;
+    Label14: TLabel;
+    ed_indic: TDBEdit;
+    ed_profis: TDBEdit;
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    Label8: TLabel;
+    Label17: TLabel;
+    Label15: TLabel;
+    Label19: TLabel;
+    Imprimir: TBitBtn;
+    Bevel1: TBevel;
+    db_sexo: TDBComboBox;
+    Label20: TLabel;
+    db_anamnese: TDBMemo;
+    db_obs: TDBMemo;
+    txtBusca: TEdit;
+    Label16: TLabel;
+    db_dataini: TJvDBDatePickerEdit;
+    db_datafim: TJvDBDatePickerEdit;
+    procedure txtBuscaChange(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormCreate(Sender: TObject);
+    procedure DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  formCadPacientes: TformCadPacientes;
+
+implementation
+
+{$R *.dfm}
+
+uses unitDM, unitCadAgendamentos;
+
+// Função para centralizar a mensagem para o usuário
+function MessageDlg(const AOwner: TForm; const Msg: string; DlgType: TMsgDlgType;
+Buttons: TMsgDlgButtons; HelpCtx: Integer = 0): Integer;
+  begin
+    with CreateMessageDialog(Msg, DlgType, Buttons) do
+     try
+       Left := AOwner.Left + (AOwner.Width - Width) div 2;
+       Top := AOwner.Top + (AOwner.Height - Height) div 2;
+        Result := ShowModal;
+      finally
+      Free;
+      end
+  end;
+
+procedure TformCadPacientes.DBNavigator1Click(Sender: TObject;
+  Button: TNavigateBtn);
+begin
+// Controle de mensagens ao clicar nos botões do navigator
+  case Button of
+    nbFirst: ;
+    nbPrior: ;
+    nbNext: ;
+    nbLast: ;
+    nbInsert: ;
+    nbDelete: If MessageDlg(Self, 'Excluir o Registro?',mtWarning,[mbYes,mbNo],0) = mrYes Then
+              dm.tbPaciente.Delete;
+    nbEdit: ;
+    nbPost: MessageDlg(Self, 'Cadastro gravado com sucesso!', mtInformation, [mbOK]);
+    nbCancel: ;
+    nbRefresh: ;
+    nbApplyUpdates: ;
+    nbCancelUpdates: ;
+  end;
+
+end;
+
+
+procedure TformCadPacientes.FormCreate(Sender: TObject);
+begin
+  // Modificando os botões do navigator para este projeto
+  NewTypeNav( DBNavigator1 ).Buttons[nbInsert].Glyph.LoadFromFile('D:\OneDrive\BKPDELL\DESKTOP\CURSOS\YOUTUBE\DELPHI\1 CLINICHELP\icons\add.bmp');
+    NewTypeNav( DBNavigator1 ).Buttons[nbDelete].Glyph.LoadFromFile('D:\OneDrive\BKPDELL\DESKTOP\CURSOS\YOUTUBE\DELPHI\1 CLINICHELP\icons\delete.bmp');
+      NewTypeNav( DBNavigator1 ).Buttons[nbEdit].Glyph.LoadFromFile('D:\OneDrive\BKPDELL\DESKTOP\CURSOS\YOUTUBE\DELPHI\1 CLINICHELP\icons\edit.bmp');
+        NewTypeNav( DBNavigator1 ).Buttons[nbFirst].Glyph.LoadFromFile('D:\OneDrive\BKPDELL\DESKTOP\CURSOS\YOUTUBE\DELPHI\1 CLINICHELP\icons\first.bmp');
+          NewTypeNav( DBNavigator1 ).Buttons[nbPrior].Glyph.LoadFromFile('D:\OneDrive\BKPDELL\DESKTOP\CURSOS\YOUTUBE\DELPHI\1 CLINICHELP\icons\prior.bmp');
+            NewTypeNav( DBNavigator1 ).Buttons[nbNext].Glyph.LoadFromFile('D:\OneDrive\BKPDELL\DESKTOP\CURSOS\YOUTUBE\DELPHI\1 CLINICHELP\icons\next.bmp');
+              NewTypeNav( DBNavigator1 ).Buttons[nbLast].Glyph.LoadFromFile('D:\OneDrive\BKPDELL\DESKTOP\CURSOS\YOUTUBE\DELPHI\1 CLINICHELP\icons\last.bmp');
+                NewTypeNav( DBNavigator1 ).Buttons[nbPost].Glyph.LoadFromFile('D:\OneDrive\BKPDELL\DESKTOP\CURSOS\YOUTUBE\DELPHI\1 CLINICHELP\icons\post.bmp');
+                  NewTypeNav( DBNavigator1 ).Buttons[nbCancel].Glyph.LoadFromFile('D:\OneDrive\BKPDELL\DESKTOP\CURSOS\YOUTUBE\DELPHI\1 CLINICHELP\icons\cancel.bmp');
+
+
+end;
+
+procedure TformCadPacientes.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+
+begin
+// Passando pelos edit's com enter
+//if Key = VK_RETURN then
+//   perform(WM_NEXTDLGCTL,0,0);
+
+end;
+
+procedure TformCadPacientes.txtBuscaChange(Sender: TObject);
+begin
+  DM.tbPaciente.Locate('nome', txtBusca.Text, [loPartialKey]);
+end;
+
+end.

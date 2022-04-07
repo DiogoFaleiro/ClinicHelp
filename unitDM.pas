@@ -27,25 +27,25 @@ type
     tbAgendamentomedico: TStringField;
     tbUsuariosid: TFDAutoIncField;
     tbUsuariosusuario: TStringField;
+    tbUsuariossenha: TStringField;
     tbPacienteid: TFDAutoIncField;
     tbPacientenome: TStringField;
     tbPacientecelular: TStringField;
     tbPacientedata: TDateField;
     tbPacientecpf: TStringField;
     tbPacienteobservacoes: TMemoField;
-    tbPacienteSexo: TStringField;
-    tbPacienteRG: TStringField;
+    tbPacienteanamnese: TMemoField;
+    tbPacientedataini: TDateField;
+    tbPacientedatafim: TDateField;
+    tbPacienteprofis: TStringField;
+    tbPacienteindicacao: TStringField;
+    tbPacienteconvenio: TStringField;
+    tbPacienteestcivil: TStringField;
+    tbPacientedatanasc: TDateTimeField;
+    tbPacienteend: TStringField;
     tbPacienteOrgao_exp: TStringField;
-    tbPacienteEnd: TStringField;
-    tbPacienteDataNasc: TDateTimeField;
-    tbPacienteEstCivil: TStringField;
-    tbPacienteConvenio: TStringField;
-    tbPacienteIndicacao: TStringField;
-    tbPacienteProfis: TStringField;
-    tbPacienteAnamnese: TMemoField;
-    tbPacienteDataIni: TDateTimeField;
-    tbPacienteDataFim: TDateTimeField;
-    tbUsuariossenha: TStringField;
+    tbPacienterg: TStringField;
+    tbPacientesexo: TStringField;
     procedure tbPacienteAfterInsert(DataSet: TDataSet);
   private
     { Private declarations }

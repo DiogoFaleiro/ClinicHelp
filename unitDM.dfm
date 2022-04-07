@@ -25,7 +25,6 @@ object DM: TDM
     object tbPacienteid: TFDAutoIncField
       FieldName = 'id'
       Origin = 'id'
-      ReadOnly = True
     end
     object tbPacientenome: TStringField
       FieldName = 'nome'
@@ -37,20 +36,17 @@ object DM: TDM
       FieldName = 'celular'
       Origin = 'celular'
       Required = True
-      EditMask = '!\(99\)00000-0000;1;_'
       Size = 16
     end
     object tbPacientedata: TDateField
       FieldName = 'data'
       Origin = 'data'
       Required = True
-      EditMask = '!99/99/0000;1;_'
     end
     object tbPacientecpf: TStringField
       FieldName = 'cpf'
       Origin = 'cpf'
       Required = True
-      EditMask = '###-###-###-##;1;_'
       Size = 14
     end
     object tbPacienteobservacoes: TMemoField
@@ -59,74 +55,72 @@ object DM: TDM
       Required = True
       BlobType = ftMemo
     end
-    object tbPacienteSexo: TStringField
-      AutoGenerateValue = arDefault
-      FieldName = 'Sexo'
-      Origin = 'Sexo'
-      Size = 2
-    end
-    object tbPacienteRG: TStringField
-      AutoGenerateValue = arDefault
-      FieldName = 'RG'
-      Origin = 'RG'
-      Size = 21
-    end
-    object tbPacienteOrgao_exp: TStringField
-      AutoGenerateValue = arDefault
-      FieldName = 'Orgao_exp'
-      Origin = 'Orgao_exp'
-      Size = 10
-    end
-    object tbPacienteEnd: TStringField
-      AutoGenerateValue = arDefault
-      FieldName = 'End'
-      Origin = 'End'
-      Size = 41
-    end
-    object tbPacienteDataNasc: TDateTimeField
-      AutoGenerateValue = arDefault
-      FieldName = 'DataNasc'
-      Origin = 'DataNasc'
-      EditMask = '!99/99/0000;1;_'
-    end
-    object tbPacienteEstCivil: TStringField
-      AutoGenerateValue = arDefault
-      FieldName = 'EstCivil'
-      Origin = 'EstCivil'
-    end
-    object tbPacienteConvenio: TStringField
-      AutoGenerateValue = arDefault
-      FieldName = 'Convenio'
-      Origin = 'Convenio'
-      Size = 16
-    end
-    object tbPacienteIndicacao: TStringField
-      AutoGenerateValue = arDefault
-      FieldName = 'Indicacao'
-      Origin = 'Indicacao'
-    end
-    object tbPacienteProfis: TStringField
-      AutoGenerateValue = arDefault
-      FieldName = 'Profis'
-      Origin = 'Profis'
-    end
-    object tbPacienteAnamnese: TMemoField
-      AutoGenerateValue = arDefault
-      FieldName = 'Anamnese'
-      Origin = 'Anamnese'
+    object tbPacienteanamnese: TMemoField
+      FieldName = 'anamnese'
+      Origin = 'anamnese'
+      Required = True
       BlobType = ftMemo
     end
-    object tbPacienteDataIni: TDateTimeField
-      AutoGenerateValue = arDefault
-      FieldName = 'DataIni'
-      Origin = 'DataIni'
-      EditMask = '!99/99/0000;1;_'
+    object tbPacientedataini: TDateField
+      FieldName = 'dataini'
+      Origin = 'dataini'
+      Required = True
     end
-    object tbPacienteDataFim: TDateTimeField
-      AutoGenerateValue = arDefault
-      FieldName = 'DataFim'
-      Origin = 'DataFim'
-      EditMask = '!99/99/0000;1;_'
+    object tbPacientedatafim: TDateField
+      FieldName = 'datafim'
+      Origin = 'datafim'
+      Required = True
+    end
+    object tbPacienteprofis: TStringField
+      FieldName = 'profis'
+      Origin = 'profis'
+      Required = True
+      Size = 80
+    end
+    object tbPacienteindicacao: TStringField
+      FieldName = 'indicacao'
+      Origin = 'indicacao'
+      Required = True
+      Size = 80
+    end
+    object tbPacienteconvenio: TStringField
+      FieldName = 'convenio'
+      Origin = 'convenio'
+      Required = True
+    end
+    object tbPacienteestcivil: TStringField
+      FieldName = 'estcivil'
+      Origin = 'estcivil'
+      Required = True
+    end
+    object tbPacientedatanasc: TDateTimeField
+      FieldName = 'datanasc'
+      Origin = 'datanasc'
+      Required = True
+    end
+    object tbPacienteend: TStringField
+      FieldName = 'end'
+      Origin = 'end'
+      Required = True
+      Size = 41
+    end
+    object tbPacienteOrgao_exp: TStringField
+      FieldName = 'Orgao_exp'
+      Origin = 'Orgao_exp'
+      Required = True
+      Size = 16
+    end
+    object tbPacienterg: TStringField
+      FieldName = 'rg'
+      Origin = 'rg'
+      Required = True
+      Size = 21
+    end
+    object tbPacientesexo: TStringField
+      FieldName = 'sexo'
+      Origin = 'sexo'
+      Required = True
+      Size = 2
     end
   end
   object tbAgendamento: TFDTable

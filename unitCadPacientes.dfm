@@ -406,7 +406,6 @@ object formCadPacientes: TformCadPacientes
     Color = clInfoBk
     DataField = 'cpf'
     DataSource = DM.dsPaciente
-    MaxLength = 14
     TabOrder = 4
   end
   object Nome: TDBEdit
@@ -433,7 +432,7 @@ object formCadPacientes: TformCadPacientes
   object Data: TDBEdit
     Left = 560
     Top = 343
-    Width = 65
+    Width = 63
     Height = 21
     Color = clInfoBk
     DataField = 'data'
@@ -560,7 +559,6 @@ object formCadPacientes: TformCadPacientes
     TabOrder = 14
     object TabSheet1: TTabSheet
       Caption = 'Resultado da Anamnese'
-      ExplicitWidth = 598
       object db_anamnese: TDBMemo
         Left = 12
         Top = 15
@@ -575,7 +573,6 @@ object formCadPacientes: TformCadPacientes
     object TabSheet2: TTabSheet
       Caption = 'Plano de tratamento'
       ImageIndex = 1
-      ExplicitWidth = 587
       object Label8: TLabel
         Left = 12
         Top = 9
