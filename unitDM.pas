@@ -65,7 +65,7 @@ implementation
 
 procedure TDM.tbPacienteAfterInsert(DataSet: TDataSet);
 begin
-  tbPacientedata.Value := Date();
+  tbPacientedata.Value := Now();
 end;
 
 function TDM.MD5String(const Value: string): string;

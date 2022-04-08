@@ -25,6 +25,7 @@ object DM: TDM
     object tbPacienteid: TFDAutoIncField
       FieldName = 'id'
       Origin = 'id'
+      ReadOnly = True
     end
     object tbPacientenome: TStringField
       FieldName = 'nome'
@@ -36,17 +37,20 @@ object DM: TDM
       FieldName = 'celular'
       Origin = 'celular'
       Required = True
+      EditMask = '(##)#####-####;1;_'
       Size = 16
     end
     object tbPacientedata: TDateField
       FieldName = 'data'
       Origin = 'data'
       Required = True
+      EditMask = '##/##/####;1;_'
     end
     object tbPacientecpf: TStringField
       FieldName = 'cpf'
       Origin = 'cpf'
       Required = True
+      EditMask = '###-###-###-##;1;_'
       Size = 14
     end
     object tbPacienteobservacoes: TMemoField
@@ -65,11 +69,13 @@ object DM: TDM
       FieldName = 'dataini'
       Origin = 'dataini'
       Required = True
+      EditMask = '##/##/####;1;_'
     end
     object tbPacientedatafim: TDateField
       FieldName = 'datafim'
       Origin = 'datafim'
       Required = True
+      EditMask = '##/##/####;1;_'
     end
     object tbPacienteprofis: TStringField
       FieldName = 'profis'
@@ -97,6 +103,7 @@ object DM: TDM
       FieldName = 'datanasc'
       Origin = 'datanasc'
       Required = True
+      EditMask = '##/##/####;1;_'
     end
     object tbPacienteend: TStringField
       FieldName = 'end'
