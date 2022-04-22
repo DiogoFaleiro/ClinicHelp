@@ -11,7 +11,6 @@ object formPrincipal: TformPrincipal
   Font.Name = 'Tahoma'
   Font.Style = []
   KeyPreview = True
-  OldCreateOrder = False
   WindowState = wsMaximized
   PixelsPerInch = 96
   TextHeight = 13
@@ -21907,7 +21906,6 @@ object formPrincipal: TformPrincipal
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = -6
     object bt_bkp: TBitBtn
       Left = 449
       Top = 1
@@ -23060,7 +23058,6 @@ object formPrincipal: TformPrincipal
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = bt_trocausuClick
-      ExplicitLeft = 449
     end
     object bt_agendamentos: TBitBtn
       Left = 225

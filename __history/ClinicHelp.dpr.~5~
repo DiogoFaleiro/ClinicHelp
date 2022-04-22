@@ -10,8 +10,7 @@ uses
   unitCadUsu in 'unitCadUsu.pas' {FormCadUsu},
   Vcl.Themes,
   Vcl.Styles,
-  unitCadTratamentos in 'unitCadTratamentos.pas' {formCadTratamentos},
-  unitFicha in 'unitFicha.pas' {FormFicha};
+  unitCadTratamentos in 'unitCadTratamentos.pas' {formCadTratamentos};
 
 {$R *.res}
 
@@ -25,6 +24,5 @@ begin
   Application.CreateForm(TFormCadUsu, FormCadUsu);
   Application.CreateForm(TformCadTratamentos, formCadTratamentos);
   Application.CreateForm(TDM, DM);
-  Application.CreateForm(TFormFicha, FormFicha);
   Application.Run;
 end.
